@@ -1,0 +1,12 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "provider.js",
+  "scripts": {
+    "start": "node provider.js"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.3"
+  }
+}
