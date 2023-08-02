@@ -62,13 +62,13 @@ namespace Api
             return HttpPolicyExtensions
                 .HandleTransientHttpError()
                 .CircuitBreakerAsync(
-                    10,
+                    6,
                     TimeSpan.FromSeconds(10)
                 );
 
             return HttpPolicyExtensions
                 .HandleTransientHttpError()
-                .CircuitBreakerAsync(10, TimeSpan.FromSeconds(10),
+                .CircuitBreakerAsync(6, TimeSpan.FromSeconds(10),
                     onBreak: (result, time) =>
                     {
 
@@ -79,7 +79,7 @@ namespace Api
                     },
                     onHalfOpen: () =>
                     {
-
+                        
                     });
         }
 

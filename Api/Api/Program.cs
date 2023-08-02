@@ -24,23 +24,7 @@ namespace Api
                 app.UseSwaggerUI();
             }
 
-            app.MapGet("/profiles", async (HttpContext httpContext) =>
-            {
-                IApiService service = app.Services.GetRequiredService<IApiService>();
-
-                RestResult<List<Profile>> result = await service.GetProfilesAsync();
-
-                if (result.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    return Results.Ok(result.Data);
-                }
-                else
-                {
-                    return Results.StatusCode((int)result.StatusCode);
-                }
-            });
-
-            app.MapGet("/profiles/{id}", async (int id) =>
+            app.MapGet("/profiles", async (int id) =>
             {
                 IApiService service = app.Services.GetRequiredService<IApiService>();
 
